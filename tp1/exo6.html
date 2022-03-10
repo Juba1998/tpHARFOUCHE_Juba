@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Toto</li>
+      <li>Tata</li>
+      <li>Titi</li>
+      <li>Tutu</li>
+    </ul>
+
+    <script>
+      const element = document.querySelector("ul");
+      const tete = document.createElement("li");
+      tete.innerHTML = "Tete";
+      console.log(element.children[1]);
+      console.log(tete);
+      element.replaceChild(tete, element.children[1]);
+    </script>
+  </body>
+</html>
+
+<!-- Créer une page HTML avec une liste “Toto” “Tata” “Titi” “Tutu”.
+     Créer un nouvel élément li et remplacer le 2ème
+élément de la liste par le nouvel élément. -->

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img onclick="zoomz(this)" src="../tp1/rat3.jpg" style="width: 700px" />
+    <img onclick="zoomz(this)" src="../tp1/rat2.jpg" style="width: 700px" />
+  </body>
+  <script>
+    function zoomz(element) {
+      let largeur1 = element.style.offsetWitdh;
+      console.log(largeur1);
+    }
+  </script>
+</html>
+
+<!-- Créer une page HTML avec 2 images. Lorsque vous cliquez sur une des deux images, la largeur de l’image cliquée 
+augmente de 20% de sa largeur actuelle et la largeur de l’autre image diminue de 20% de sa largeur actuelle. 
+Attention : la largeur ne peut pas être négative -->
