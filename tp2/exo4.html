@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body OnKeyUp="keyevent(event)">
+    <div
+      id="rose"
+      style="
+        width: 50px;
+        height: 50px;
+        background-color: pink;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+      "
+    ></div>
+
+    <script>
+      function keyevent(event) {
+        haut = document.getElementById("rose").style.top;
+        haut = parseFloat(haut);
+        gauche = document.getElementById("rose").style.left;
+        gauche = parseFloat(gauche);
+        droite = document.getElementById("rose").style.right;
+        droite = parseFloat(droite);
+        bas = document.getElementById("rose").style.bottom;
+        bas = parseFloat(bas);
+        console.log(event.keyCode);
+        switch (event.keyCode) {
+          case 37:
+            document.getElementById("rose").style.left = gauche - 5 + "px";
+            break;
+          case 38:
+            document.getElementById("rose").style.top = haut - 5 + "px";
+            break;
+          case 39:
+            document.getElementById("rose").style.left = gauche + 5 + "px";
+            break;
+          case 40:
+            document.getElementById("rose").style.top = haut + 5 + "px";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Créer une page HTML contenant une div de 50 px sur 50px avec un fond rose. Avec un event, 
+faite en sorte de pouvoir déplacer la div avec les touches fléchées de votre clavier. -->
