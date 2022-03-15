@@ -6,7 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <img
+      id="img2"
+      onmouseover="zoomOn(this)"
+      onmouseout="zoomDown(this)"
+      src="../tp1/rat3.jpg"
+      style="position: relative; width: 150px; height: 150px"
+    />
+    <img
+      onmouseover="zoomOn(this)"
+      onmouseout="zoomDown(this)"
+      id="img2"
+      src="cat2.jpeg"
+      style="position: relative; width: 150px; height: 150px"
+    />
+    <img
+      onmouseover="zoomOn(this)"
+      onmouseout="zoomDown(this)"
+      id="img3"
+      src="cat.jpeg"
+      style="position: relative; width: 150px; height: 150px"
+    />
+
+    <script>
+      function zoomOn(element) {
+        element.style.width = "450px";
+        element.style.height = "450px";
+      }
+      function zoomDown(element) {
+        element.style.width = "150px";
+        element.style.height = "150px";
+      }
+    </script>
+  </body>
 </html>
 
-<!-- Créer une page HTML avec plusieurs images, au survol d’une image faites un zoom x3 sur cette image. -->
+<!-- Créer une page HTML avec plusieurs images,
+au survol d’une image faites un zoom x3 sur cette image. -->
