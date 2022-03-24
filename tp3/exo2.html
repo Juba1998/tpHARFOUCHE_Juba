@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Randomisateur(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let nbdiv = Randomisateur(5, 15);
+      console.log(nbdiv);
+      for (let i = 0; i < nbdiv; i++) {
+        let newcolor = "#" + ((Math.random() * 0xffffff) << 0).toString(16);
+        const mydiv = document.createElement("div");
+        console.log(mydiv);
+        mydiv.style.backgroundColor = newcolor;
+        mydiv.style.height = "50px";
+        mydiv.style.width = "100%";
+        document.body.appendChild(mydiv);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+Créer une page HTML vide. Grâce à une boucle for, généré aléatoirement entre 5 et 15 div de 50px de haut et une 
+largeur de 100% avec une couleur aléatoire. -->

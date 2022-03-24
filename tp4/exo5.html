@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function revert(str) {
+        return str.split("").reverse().join("");
+      }
+
+      function palindrome(str) {
+        let parite = 0;
+        if (str.length % 2 == 0) {
+          parite = 0;
+        } else {
+          parite = 1;
+        }
+        switch (parite) {
+          case 1:
+            const chaine1 = str.slice(0, str.length / 2 - 0.5);
+            const chaine2 = revert(str.slice(str.length / 2 + 0.5));
+            if (chaine1 == chaine2) {
+              console.log(true);
+            } else {
+              console.log(false);
+            }
+            break;
+          case 0:
+            const chaine3 = str.slice(0, str.length / 2);
+            const chaine4 = revert(str.slice(str.length / 2));
+            if (chaine3 == chaine4) {
+              console.log(true);
+            } else {
+              console.log(false);
+            }
+            break;
+        }
+      }
+      palindrome("kayak");
+    </script>
+  </body>
+</html>

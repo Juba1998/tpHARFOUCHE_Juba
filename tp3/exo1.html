@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="display: flex; flex-direction: row; gap: 10px">
+    <div style="height: 60px; width: 60px; background-color: black"></div>
+    <div style="height: 60px; width: 60px; background-color: black"></div>
+    <div style="height: 60px; width: 60px; background-color: black"></div>
+    <script>
+      let bodyclick = document.getElementsByTagName("div");
+
+      console.log(bodyclick);
+
+      for (let i = 0; i < bodyclick.length; i++) {
+        console.log(bodyclick[i]);
+        bodyclick[i].addEventListener(
+          "click",
+          function (event) {
+            console.log("test");
+            switch (event.target.style.backgroundColor) {
+              case "black":
+                event.target.style.backgroundColor = "red";
+                break;
+              case "red":
+                event.target.style.backgroundColor = "black";
+                break;
+            }
+          },
+          false
+        );
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Créer une page HTML avec 3 div carrés ayant un fond noir. Au clic sur une div, elle prend la couleur rouge. Si vous 
+recliquez dessus, elle redevient noir. -->

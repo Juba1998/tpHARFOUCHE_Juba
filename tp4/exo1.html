@@ -7,17 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <ul>
-      <li onclick="toFirst(this)">Paris</li>
-      <li onclick="toFirst(this)">Beauvais</li>
-      <li onclick="toFirst(this)">Amiens</li>
-      <li onclick="toFirst(this)">New York</li>
-    </ul>
-
     <script>
-      function toFirst(element) {
-        document.querySelector("ul").prepend(element);
+      function revert(str) {
+        console.log(str.split("").reverse().join(""));
       }
+      revert("Hello i'm Robert !");
     </script>
   </body>
 </html>
+
+<!-- Créer une fonction revert(str) qui  inverse une chaîne de caractère et la retourne -->
