@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const s1 = "How the avocado became the fruit of the global trade";
+            const s2 = "Why you will probably pay more for your christmas tree this year";
+            const s3 = "hey parents, surprise fruit juice is not fruit";
+            const s4 = "visualizing science";
+            
+            function getHashTags(chaine, longest = []) { // J'AI DEJA GALÉRÉ POUR RÉDUIRE LE NOMBRE DE LIGNE, ALORS EN UNE SEULE ....
+            chaine.split(" ").forEach((el) => {
+               longest.length < 3 && longest.push("#" + chaine.split(" ").reduce((a, b) => (a.length < b.length && !longest.includes("#" + b) ? b : a), ""));
+            });
+            return longest;
+         }
+
+            console.log(getHashTags(s1));
+            console.log(getHashTags(s2));
+            console.log(getHashTags(s3));
+            console.log(getHashTags(s4));
+    </script>
+</body>
+</html>

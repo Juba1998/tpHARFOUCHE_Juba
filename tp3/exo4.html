@@ -9,23 +9,34 @@
   <body>
     <ul></ul>
     <script>
-      const mydiv = document.createElement("li");
+      const myli = document.createElement("li");
       let Bbody = document.getElementsByTagName("body")[0];
+      
+      
 
       Bbody.addEventListener(
         "keydown",
         function (element) {
+          const array = document.getElementsByTagName("body")[0];
           const touche = element.keyCode;
           const nom = String.fromCharCode(touche);
-          const mydiv = document.createElement("li");
-          mydiv.innerHTML = nom;
-          document.getElementsByTagName("ul")[0].appendChild(mydiv);
+          const myli = document.createElement("li");
+          myli.innerHTML = nom;
+          document.getElementsByTagName("ul")[0].appendChild(myli);
+          if(document.getElementsByTagName("ul").length){
+            array.shift();
+          };
+          
         },
         false
       );
 
-      mydiv.innerHTML = "list";
-      document.getElementsByTagName("ul")[0].appendChild(mydiv);
+      myli.innerHTML = "Liste des touches tapées";
+      document.getElementsByTagName("ul")[0].appendChild(myli);
+      
+      //if(document.getElementsByTagName("ul").length > 21){
+        
+      //}
     </script>
   </body>
 </html>

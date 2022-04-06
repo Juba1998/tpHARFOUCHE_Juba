@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>NO HOMO</li>
+        <li>LAURENT ET KAELIG</li>
+        <li>SOLI ET SAMUEL</li>
+        <li>FLORIAN ET JASON</li>
+    </ul>
+
+    <script>
+        let Bbody = document.getElementsByTagName("body")[0];
+        Bbody.addEventListener("onclick", function( element ) {
+              element.target.style.color = "red";
+
+      }, false);
+      
+    </script>
+</body>
+</html>
+
+
+<!-- BONUS: Récupérer une page HTML sur internet, au clic sur un élément de la page, supprimer l’élément du DOM -->
