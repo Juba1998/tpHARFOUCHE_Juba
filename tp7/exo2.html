@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const differencedeuxvariable = (a,b) => 
+                new Promise((success,failure)=>{
+                    if(a > b){
+                        success(a - b);
+                    }else{
+                        failure('Échec'); 
+                    }
+                });        
+
+            function successCallback(value){
+                console.log("L'opération a réussi avec le message : " + value);
+            }
+
+            function failureCallback(error){
+                console.error("L'opération a échoué avec le message : " + error);
+            }
+
+            const promise = differencedeuxvariable(12,2).then(successCallback,failureCallback);
+    </script>
+</body>
+</html>

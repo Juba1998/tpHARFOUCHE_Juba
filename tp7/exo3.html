@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const estMajeur = (date) => 
+                new Promise((success,failure)=>{
+                    const today = Date.now();
+                    const [jour,mois,année] = date.split("/");
+                    const birthd = new Date(année,mois-1,jour).getTime();
+                    const difference = ((today - birthd) / (86400000 * 365.25));
+                    if(difference >= 18){
+                        success(true);
+                    }else{
+                        failure('Mineur');
+                    }
+                });        
+
+            function successCallback(result){
+                console.log(result)
+            }
+
+            function failureCallback(error){
+                console.error(error)
+            }
+
+            const promise = estMajeur('21/11/1998').then(successCallback,failureCallback);
+    </script>
+</body>
+</html>
