@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Personne = {
+        name: "Mattmmmmm",
+        surname: "Edazbit",
+        gender: "M",
+        dob: "1/1/1900",
+      };
+
+      function fiscalCode(person, name_voy = ["A", "E", "I", "O", "U", "Y"]) {
+        let famMaj = "";
+        let tab = [];
+        for (const key in person) {
+          tab = person.name.toUpperCase().split("");
+          //   while (famMaj.replace(/\s+/g, "").length < 3) {
+          for (let i = 0; i < tab.length; i++) {
+            const element = tab[i];
+            if (
+              !name_voy.includes(element) &&
+              famMaj.replace(/\s+/g, "").length < 3
+            ) {
+              famMaj += element;
+            }
+          }
+        }
+        console.log(famMaj);
+      }
+      const person = "a";
+
+      function test(Personne, cons = [], firstname = []) {
+        let name_cons = Personne.name.match(/[^aeiyuo]/gi) || [];
+        let name_voy = Personne.name.match(/[aeiyuo]/gi) || [];
+
+        let surname_cons = Personne.surname.match(/[^aeiyuo]/gi) || [];
+        let surname_voy = Personne.surname.match(/[aeiyuo]/gi) || [];
+        console.log(surname_cons);
+        if (surname_cons.length > 3) {
+          surname_cons = surname_cons.splice(1, 1);
+        }
+
+        let sname = name_cons.join("") + name_voy.join("");
+        let fname = surname_cons.join("") + surname_voy.join("");
+        fname = fname.toUpperCase().split("");
+        sname = sname.toUpperCase().split("");
+        if (sname.length > 3) {
+          for (let i = 0; i < 3; i++) {
+            cons += sname[i];
+          }
+        } else {
+          switch (sname.length) {
+            case 1:
+              cons = sname[0] + "X" + "X";
+              break;
+            case 2:
+              cons = sname[0] + sname[1] + "X";
+              break;
+          }
+        }
+        if (fname.length > 3) {
+          for (let i = 0; i < 3; i++) {
+            firstname += fname[i];
+          }
+        } else {
+          switch (fname.length) {
+            case 1:
+              firstname = fname[0] + "X" + "X";
+              break;
+            case 2:
+              firstname = fname[0] + fname[1] + "X";
+              break;
+          }
+        }
+        console.log(cons, firstname);
+      }
+      test(Personne);
+      //   fiscalCode(Personne);
+    </script>
+  </body>
+</html>
